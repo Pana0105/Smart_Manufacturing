@@ -175,6 +175,17 @@ $machines = mysqli_fetch_all($result, MYSQLI_ASSOC);
         <button type="submit" name="update_machine">Update Machine</button>
     </form>
 
+    <footer>
+            <ul class="social-media">
+                <li><a href="https://www.youtube.com" target="_blank"><img src="youtube.jpg" alt="YouTube"></a></li>
+                <li><a href="https://www.facebook.com" target="_blank"><img src="facebook.png" alt="Facebook"></a></li>
+                <li><a href="https://www.twitter.com" target="_blank"><img src="x.webp" alt="X"></a></li>
+                <li><a href="https://www.linkedin.com" target="_blank"><img src="linkedin.webp" alt="LinkedIn"></a></li>
+            </ul>
+            <p>Contact Us: info@smartdashboard.com | +123 456 789</p>
+            <p>&copy; 2024 Smart Manufacturing Dashboard. All rights reserved.</p>
+        </footer>
+
     <script>
         // Function to populate the update form with existing machine data
         function populateUpdateForm(id, machineName, machineDescription, status) {

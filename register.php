@@ -33,6 +33,17 @@ if (isset($_POST['register_user'])) {
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <nav>
+            <ul class="navbar">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="login.php">Login</a></li>
+                <li><a href="register.php">Register</a></li>
+            </ul>
+        </nav>
+    </header>
     <h2>User Registration</h2>
 
     <form action="register.php" method="POST">
@@ -45,5 +56,16 @@ if (isset($_POST['register_user'])) {
         </select>
         <button type="submit" name="register_user">Register</button>
     </form>
+
+    <footer>
+        <ul class="social-media">
+            <li><a href="https://www.youtube.com" target="_blank"><img src="youtube.jpg" alt="YouTube"></a></li>
+            <li><a href="https://www.facebook.com" target="_blank"><img src="facebook.png" alt="Facebook"></a></li>
+            <li><a href="https://www.twitter.com" target="_blank"><img src="x.webp" alt="X"></a></li>
+            <li><a href="https://www.linkedin.com" target="_blank"><img src="linkedin.webp" alt="LinkedIn"></a></li>
+        </ul>
+        <p>Contact Us: info@smartdashboard.com | +123 456 789</p>
+        <p>&copy; 2024 Smart Manufacturing Dashboard. All rights reserved.</p>
+    </footer>
 </body>
 </html>

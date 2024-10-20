@@ -60,7 +60,7 @@ $jobs = mysqli_fetch_all($result, MYSQLI_ASSOC);
             background-color: #eaf2f8;
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Align items to the top */
+            align-items: flex-start;
         }
 
         .container {
@@ -77,7 +77,7 @@ $jobs = mysqli_fetch_all($result, MYSQLI_ASSOC);
         }
 
         nav {
-            background-color: #007BFF; /* Navbar background color */
+            background-color: #007BFF;
             padding: 10px;
             border-radius: 8px;
         }
@@ -86,7 +86,7 @@ $jobs = mysqli_fetch_all($result, MYSQLI_ASSOC);
             list-style-type: none;
             padding: 0;
             display: flex;
-            justify-content: space-around; /* Space out navbar items */
+            justify-content: space-around;
         }
 
         .navbar li a {
@@ -163,7 +163,7 @@ $jobs = mysqli_fetch_all($result, MYSQLI_ASSOC);
         }
 
         .action-buttons a {
-            background-color: #dc3545; /* Red for delete button */
+            background-color: #dc3545;
         }
 
         .action-buttons button:hover, .action-buttons a:hover {
@@ -174,12 +174,10 @@ $jobs = mysqli_fetch_all($result, MYSQLI_ASSOC);
             background-color: #c82333;
         }
 
-        /* Styling the update form */
         .update-form {
             margin-top: 20px;
         }
 
-        /* Message styling */
         .message {
             text-align: center;
             background-color: #d4edda;
@@ -188,6 +186,36 @@ $jobs = mysqli_fetch_all($result, MYSQLI_ASSOC);
             margin-bottom: 20px;
             border: 1px solid #c3e6cb;
             border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #007BFF;
+            color: white;
+            border-top: 4px solid #004f9e;
+            margin-top: 20px;
+        }
+
+        footer .social-media {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        footer .social-media li {
+            margin: 0 10px;
+        }
+
+        footer .social-media a img {
+            width: 24px;
+            height: 24px;
+        }
+
+        footer p {
+            margin: 5px;
         }
     </style>
 </head>
@@ -236,7 +264,6 @@ $jobs = mysqli_fetch_all($result, MYSQLI_ASSOC);
                     <td><?php echo htmlspecialchars($job['job_name']); ?></td>
                     <td><?php echo htmlspecialchars($job['job_description']); ?></td>
                     <td class="action-buttons">
-                        <!-- Button to populate the update form -->
                         <button type="button" onclick="populateUpdateForm(<?php echo $job['id']; ?>, '<?php echo addslashes($job['job_name']); ?>', '<?php echo addslashes($job['job_description']); ?>')">Edit</button>
                         <a href="jobs.php?delete_job=<?php echo $job['id']; ?>" onclick="return confirm('Are you sure you want to delete this job?');">Delete</a>
                     </td>
@@ -253,16 +280,28 @@ $jobs = mysqli_fetch_all($result, MYSQLI_ASSOC);
             <textarea name="job_description" id="job_description" placeholder="Job Description" required></textarea>
             <button type="submit" name="update_job">Update Job</button>
         </form>
+
+        <footer>
+            <ul class="social-media">
+                <li><a href="https://www.youtube.com" target="_blank"><img src="youtube.jpg" alt="YouTube"></a></li>
+                <li><a href="https://www.facebook.com" target="_blank"><img src="facebook.png" alt="Facebook"></a></li>
+                <li><a href="https://www.twitter.com" target="_blank"><img src="x.webp" alt="X"></a></li>
+                <li><a href="https://www.linkedin.com" target="_blank"><img src="linkedin.webp" alt="LinkedIn"></a></li>
+            </ul>
+            <p>Contact Us: info@smartdashboard.com | +123 456 789</p>
+            <p>&copy; 2024 Smart Manufacturing Dashboard. All rights reserved.</p>
+        </footer>
+
     </div>
 
+    
+
     <script>
-        // Function to populate the update form with existing job data
-        function populateUpdateForm(id, jobName, jobDescription) {
+        function populateUpdateForm(id, name, description) {
             document.getElementById('job_id').value = id;
-            document.getElementById('job_name').value = jobName;
-            document.getElementById('job_description').value = jobDescription;
+            document.getElementById('job_name').value = name;
+            document.getElementById('job_description').value = description;
         }
     </script>
-
 </body>
 </html>
